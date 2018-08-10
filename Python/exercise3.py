@@ -97,3 +97,33 @@ def exactly_one_sauce(ketchup, mustard, onion):
     return ketchup != mustard
 
 q5.c.check()
+
+####################################################################
+######################## E X E R C I S E 6 #########################
+####################################################################
+
+def exactly_one_topping(ketchup, mustard, onion):
+    """Return whether the customer wants exactly one of the three available toppings
+    on their hot dog.
+    """
+    return (int(ketchup) + int (mustard) + int(onion)) == 1
+
+q6.check()
+
+####################################################################
+######################## E X E R C I S E 7 #########################
+####################################################################
+
+# 42% win rate
+def should_hit(player_total, dealer_total, player_aces):
+    """Return True if the player should hit (request another card) given the current game
+    state, or False if the player should stay. player_aces is the number of aces the player has.
+    """
+    hit = False
+    if player_total < 12:
+        hit = True
+    if dealer_total > 17 and player_total < 17:
+        hit = True
+    return hit
+
+q7.simulate(n_games=1000)
