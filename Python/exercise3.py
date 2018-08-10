@@ -31,3 +31,69 @@ to_smash(1)
 ####################################################################
 ######################## E X E R C I S E 3 #########################
 ####################################################################
+
+def prepared_for_weather(have_umbrella, rain_level, have_hood, is_workday):
+    # Don't change this code. Our goal is just to find the bug, not fix it!
+    return have_umbrella or rain_level < 5 and have_hood or not rain_level > 0 and is_workday
+
+# Change the values of these inputs so they represent a case where prepared_for_weather
+# returns the wrong answer.
+have_umbrella = False
+rain_level = 0.0
+have_hood = False
+is_workday = False
+
+# Check what the function returns given the current values of the variables above
+actual = prepared_for_weather(have_umbrella, rain_level, have_hood, is_workday)
+print(actual)
+
+
+####################################################################
+######################## E X E R C I S E 4 #########################
+####################################################################
+def is_negative(number):
+    if number < 0:
+        return True
+    else:
+        return False
+
+def concise_is_negative(number):
+    return number < 0
+
+q4.check()
+
+####################################################################
+######################## E X E R C I S E 5 #########################
+####################################################################
+
+# A:
+def onionless(ketchup, mustard, onion):
+    """Return whether the customer doesn't want onions.
+    """
+    return not onion
+
+# B:
+def wants_all_toppings(ketchup, mustard, onion):
+    """Return whether the customer wants "the works" (all 3 toppings)
+    """
+    return ketchup == mustard == onion == True
+
+q5.a.check()
+
+# C:
+def wants_plain_hotdog(ketchup, mustard, onion):
+    """Return whether the customer wants a plain hot dog with no toppings.
+    """
+    #return not ketchup and not mustard and not onion
+    return ketchup == mustard == onion == False
+
+q5.b.check()
+
+# D:
+def exactly_one_sauce(ketchup, mustard, onion):
+    """Return whether the customer wants either ketchup or mustard, but not both.
+    (You may be familiar with this operation under the name "exclusive or")
+    """
+    return ketchup != mustard
+
+q5.c.check()
