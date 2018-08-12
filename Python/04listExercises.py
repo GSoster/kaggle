@@ -39,3 +39,41 @@ def purple_shell(racers):
     racers.append(racers[0])
     racers[0] = temp    
 q3.check()
+
+
+####################################################################
+######################## E X E R C I S E 5 #########################
+####################################################################
+def fashionably_late(arrivals, name):
+    """Given an ordered list of arrivals to the party and a name, return whether the guest with that
+    name was fashionably late.
+    """    
+    isFashionably = True
+    index = arrivals.index(name)
+    return False if (index == (len(arrivals)-1) or index < (len(arrivals)/2)) else True
+    # Clear way to read the above statement
+    #if (index == (len(arrivals)-1)):
+    #    isFashionably = False
+    #if (index < (len(arrivals)/2)):
+    #    isFashionably = False
+    #return isFashionably
+    
+
+q5.check()
+
+####################################################################
+######################## E X E R C I S E 6 #########################
+####################################################################
+def count_negatives(nums):
+    """Return the number of negative numbers in the given list.
+    
+    >>> count_negatives([5, -1, -2, 0, 3])
+    2
+    """            
+    if (0 not in nums):
+        nums.append(0)
+    nums.sort()
+    return nums.index(0)
+
+#count_negatives([3,2,-3,-2,-1,0,1])
+q6.check()
